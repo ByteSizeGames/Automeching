@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automining</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      canvas {
+        border: 1px solid #fff;
+        image-rendering: pixelated;
+      }
+
+      .above-controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 40px;
+      }
+
+      .money-counter {
+        font-size: 1.5em;
+        margin: 10px 0;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .actions label,
+      .actions button {
+        margin: 5px 0;
+      }
+
+      #begForMoney {
+        margin-top: 10px;
+        width: 200px;
+        height: 60px;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 800px">
+      <div class="above-controls">
+        <h1>Automining</h1>
+        <div id="moneyPerMinute" class="money-counter">$/min: 0</div>
+        <div id="money" class="money-counter">Money: $0</div>
+      </div>
+      Pan with AWSD keys, zoom with mouse wheel.
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div class="controls">
+      <div class="actions">
+        <div>
+          <label id="labelMiner" for="buyMiner">Miners: ?</label>
+          <button id="buyMiner">Buy (?)</button>
+        </div>
+        <div>
+          <label id="labelTravelSpeed" for="buyTravelSpeed"
+            >Travel Speed: ?</label
+          >
+          <button id="buyTravelSpeed">Buy (?)</button>
+        </div>
+        <div>
+          <label id="labelMiningSpeed" for="buyMiningSpeed"
+            >Mining Speed: ?</label
+          >
+          <button id="buyMiningSpeed">Buy (?)</button>
+        </div>
+        <div>
+          <label id="labelInventorySpace" for="buyInventorySpace"
+            >Inventory Space: ?</label
+          >
+          <button id="buyInventorySpace">Buy (?)</button>
+        </div>
+      </div>
+      <button id="begForMoney">Beg for money</button>
+    </div>
+    <script type="text/javascript" src="astar.js"></script>
+    <script type="text/javascript" src="perlin.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+  </body>
+</html>
